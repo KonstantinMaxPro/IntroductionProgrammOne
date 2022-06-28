@@ -1,20 +1,29 @@
-﻿int a;
-int b;
-int maximum = 0;
-int minimum = 0;
+﻿int numOne;
+int numTwo;
+
+void MaxMin(int arg1, int arg2)
+{
+    int maximum = 0;
+    int minimum = 0;
+    if(arg1 > arg2){
+        maximum = arg1;
+        minimum = arg2;
+    }
+    else{
+        maximum = arg2;
+        minimum = arg1;
+    }
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine($"Большее число: {maximum}");
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.WriteLine($"Меньшее число: {minimum}");
+}
+
+
 Console.WriteLine("Введите два числа");
 Console.Write("Первое число: ");
-a = Convert.ToInt32(Console.ReadLine());
+numOne = Convert.ToInt32(Console.ReadLine());
 Console.Write("Второе число: ");
-b = Convert.ToInt32(Console.ReadLine());
-if(a > b)
-{
-    maximum = a;
-    minimum = b;
-}
-else{
-    maximum = b;
-    minimum = a;
-}
+numTwo = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine();
-Console.WriteLine($"Большее число: {maximum}\nМеньшее число: {minimum}");
+MaxMin(numOne, numTwo);
